@@ -1,0 +1,46 @@
+<div class="container mt-2 pt-5">
+
+    <!--
+    <div *ngIf="errorMessage"> {{errorMessage | json}} </div>
+ -->
+    <div class="card" *ngIf="fichiers">
+        
+
+        <div class="card-header">Fichiers</div>
+        <div class="card-body">
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                    
+                        <th>Track-ID</th>
+                        <th>Licence-Plate</th>
+                        <th>Color</th>
+                        <th>Type</th>
+                        <th>Operation</th>
+                        <th>Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let f of fichiers | async">
+                
+                        <td>{{f.track_id_f}} </td>
+                        <td>{{f.license_plate_text_f}} </td>
+                        <td>{{f.color}} </td>
+                        <td>{{f.Type}} </td>
+                        <td>{{f.operation}} </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
