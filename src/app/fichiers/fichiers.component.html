@@ -45,11 +45,12 @@
                         <td>{{f.track_id_f}} </td>
                         <td>{{f.license_plate_text_f}} </td>
                         <td>{{f.color}} </td>
-                        <td>{{f.Type}} </td>
+                        <td>{{f.type}} </td>
                         <td>{{f.operation}} </td>
                         <td>
                             <button *ngIf="authService.roles.includes('ADMIN')" (click)="handleDeleteFichier(f)" class="btn btn-outline-danger">
                                 <!--<img src="https://img.icons8.com/?size=256&id=Z1uq6OhA7KYK&format=png" height="25">-->
+                              <!--  <img src="https://img.icons8.com/?size=256&id=XLYyiimvk3fV&format=png" height="30">-->
                                 <i class="bi bi-trash"></i>
                             </button>
                         </td>

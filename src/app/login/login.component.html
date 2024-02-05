@@ -1,25 +1,50 @@
-<div  style="padding-top: 10%;">
+<div class="form-structor"  style="padding-top: 10%;">
 
-    <div class="card col-md-6 offset-3 mt-2">
+    <div class="card col-md-6 offset-3 mt-2 ">
         
-        <div class="card-header d-flex justify-content-center p-3">
-            <div><img src="https://img.icons8.com/?size=256&id=5gNd48f2S9rS&format=png" height="45">
-             </div> <div class="pt-2" style="font-family: Jazz LET;">Authentication</div> </div>
-        <div class="card-body">
-            <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+        <div class="card-header d-flex  p-3 header-image">
+            <div> <!--<img src="https://static.vecteezy.com/system/resources/previews/009/349/223/large_2x/3d-rendering-security-system-on-cloud-computing-free-png.png" height="70">-->
+              <!--  <img src="https://static.vecteezy.com/system/resources/previews/028/585/607/large_2x/security-3d-rendering-icon-illustration-free-png.png" height="70">
+           -->
+           <img src="https://static.vecteezy.com/system/resources/previews/028/585/607/large_2x/security-3d-rendering-icon-illustration-free-png.png" height="70">
+           </div> <div class="pt-3" style=" font-size: 30px; 
+             font-family: Impact, sans-serif; color: dark;
+
+           ">Authentication</div> </div>
+       
+           <div class="card-body ">
+
+            <div class="background-container">
+
+            <form [formGroup]="formLogin" (ngSubmit)="handleLogin()" class="pt-3">
                 <div class="mb-3">
-                    <label class="form-label" style="font-family: Jazz LET;">Username</label>
+                    <label class="form-label" style="font-family: Impact, sans-serif;">Username:</label>
                     <input type="text" class="form-control" formControlName="username" style="font-family: Jazz LET;" >
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" style="font-family: Jazz LET;">Password</label>
+                    <label class="form-label" style="font-family: Impact, sans-serif;">Password:</label>
                     <input type="password" class="form-control"formControlName="password">
                 </div>
-                <button class="btn btn-outline-info">
+                <button class="btn btn-outline-dark" >
                     <img src="https://img.icons8.com/?size=256&id=78DNxx5REZlb&format=png" height="50">
+                 <!--  <img src="https://cdn.dribbble.com/users/1202316/screenshots/16896981/media/ef9c7c1e522aab9c595928e3f4bc4276.gif"  height="50" style="border-radius: 10px;">
+             -->   <!--    <img src="https://cdn.dribbble.com/users/846207/screenshots/4787301/media/d1a4a7bd8d9a0a3238fbac22531abf3c.gif"  height="60" style="border-radius: 10px;">
+--> 
                 </button>
+   <!--             
+                <div class="bottom-image" style="position: absolute; bottom: 0; right: 0;">
+                 <img src="https://cdn3d.iconscout.com/3d/premium/thumb/police-officer-5219698-4370611.png" alt="Police Officer Image" style="width: 100px; height: auto;">
+                </div>
+                 <div style="position: absolute; bottom: 0; right: 11%;">
+      <img src="https://gd-hbimg.huaban.com/7b4573c5f74ca0ab7595833ceab4b640c500591233d87-spg9A2_fw236" alt="Second Image" style="width: 100px; height: auto;">
+    </div>-->
+     <!--<div style="position: absolute; bottom: 0; right: 20%;">
+      <img src="https://cdn3d.iconscout.com/3d/premium/thumb/sheriff-5283953-4404215.png" alt="Second Image" style="width: 100px; height: auto;">
+    </div>-->
             </form>
+        </div>
         </div>
 
     </div>
+    
 </div>

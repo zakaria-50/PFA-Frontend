@@ -45,7 +45,7 @@ export class FichiersComponent implements OnInit {
   }*/
 
   handleDeleteFichier(f:Fichier){
-    let conf = confirm("Are you sure ?");
+    let conf = confirm("Do You Want To Delete The Record ?");
     if(!conf) return ; 
     this.fichierService.deleteFichier(f.track_id_f).subscribe({
     next:(resp)=>{

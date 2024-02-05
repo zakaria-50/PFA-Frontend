@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
 
   { path:"login", component:LoginComponent},
+  { path: '**', redirectTo: '/login' },
   { path:"", redirectTo: "/login", pathMatch: "full"},
   { path: "admin", component: AdminTemplateComponent, canActivate:[AuthenticationGuard],
   children :[

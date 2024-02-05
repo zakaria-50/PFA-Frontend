@@ -1,0 +1,16 @@
+.background-container {
+   /* box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1;*/
+    background-image: url('https://img.freepik.com/vecteurs-libre/fond-formes-etoiles-colorees_52683-61010.jpg?w=740&t=st=1706640213~exp=1706640813~hmac=1b8e67f2f6d13be86efabd020254710a0b66f822b0941fdf71e80fa3b4f7d47f');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Placez-le en arrière-plan par rapport au contenu */
+  }
+
+  
+
+  .header-image {
+    background-image: url('https://concours.dgsn.gov.ma/images/banniere.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
