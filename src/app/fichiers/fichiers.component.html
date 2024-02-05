@@ -1,4 +1,4 @@
-<div class="container mt-2 pt-5">
+<div class="container mt-2 pt-5 pb-5">
 
     <!--
     <div *ngIf="errorMessage"> {{errorMessage | json}} </div>
@@ -6,8 +6,24 @@
     <div class="card" *ngIf="fichiers">
         
 
-        <div class="card-header">Fichiers</div>
+        <div class="card-header"> 
+            <img src="https://cdn-icons-png.freepik.com/512/7875/7875406.png?ga=GA1.1.390968011.1706228316&" height="40">
+            Records</div>
         <div class="card-body">
+            <div *ngIf="searchFormGroup">
+               <!--{{this.searchFormGroup.value | json}}--> 
+                <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchFichiers()" >
+                <div class="input-group">
+                    <label class="input-group-text">Keyword :</label>
+                    <input type="text" formControlName="keyword" class="form-control">
+                    <button class="btn btn-outline-info">
+                        <img src="https://img.icons8.com/?size=256&id=ObuWtTlsoTj6&format=png" height="25" />
+                    </button>
+                </div>
+                </form> 
+        
+        </div>
+            
 
             <table class="table">
 
@@ -19,7 +35,7 @@
                         <th>Color</th>
                         <th>Type</th>
                         <th>Operation</th>
-                        <th>Actions</th>
+                        <th *ngIf="authService.roles.includes('ADMIN')" >Actions</th>
 
                     </tr>
                 </thead>
@@ -31,6 +47,12 @@
                         <td>{{f.color}} </td>
                         <td>{{f.Type}} </td>
                         <td>{{f.operation}} </td>
+                        <td>
+                            <button *ngIf="authService.roles.includes('ADMIN')" (click)="handleDeleteFichier(f)" class="btn btn-outline-danger">
+                                <!--<img src="https://img.icons8.com/?size=256&id=Z1uq6OhA7KYK&format=png" height="25">-->
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

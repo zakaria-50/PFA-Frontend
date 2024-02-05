@@ -1,0 +1,39 @@
+<section style="height: 100vh;">
+<div class="container pt-5 pb-5">
+    <div class="card col-md-6 offset-3 mt-2 ">
+        <div class="card-header">New Fichier</div>
+        <div class="card-body">
+            <form [formGroup]="newFichierFormGroup" (ngSubmit)="handleSaveFichier()">
+                <div class="mb-3">
+                    <label class="form-label">Track-ID</label>
+                    <input type="text" formControlName="track_id_f" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Licence-Plate</label>
+                    <input type="text" formControlName="license_plate_text_f" class="form-control">
+                    <span class="text-danger"
+                     *ngIf="newFichierFormGroup.controls['license_plate_text_f'].touched
+                      && newFichierFormGroup.controls['license_plate_text_f'].errors
+                      && newFichierFormGroup.controls['license_plate_text_f'].errors!['required']">
+                    Licence-Plate is required !
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Color</label>
+                    <input type="text" formControlName="color" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Type</label>
+                    <input type="text" formControlName="Type" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Operation</label>
+                    <input type="text" formControlName="operation" class="form-control">
+                </div>
+                <button [disabled]="!newFichierFormGroup.valid" class="btn btn-outline-info">
+                    <img src="https://img.icons8.com/?size=256&id=AefXIkx4A693&format=png" height="25" >
+                </button>
+            </form>
+        </div>
+    </div>
+</div></section>

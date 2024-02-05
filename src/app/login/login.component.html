@@ -1,0 +1,25 @@
+<div  style="padding-top: 10%;">
+
+    <div class="card col-md-6 offset-3 mt-2">
+        
+        <div class="card-header d-flex justify-content-center p-3">
+            <div><img src="https://img.icons8.com/?size=256&id=5gNd48f2S9rS&format=png" height="45">
+             </div> <div class="pt-2" style="font-family: Jazz LET;">Authentication</div> </div>
+        <div class="card-body">
+            <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+                <div class="mb-3">
+                    <label class="form-label" style="font-family: Jazz LET;">Username</label>
+                    <input type="text" class="form-control" formControlName="username" style="font-family: Jazz LET;" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" style="font-family: Jazz LET;">Password</label>
+                    <input type="password" class="form-control"formControlName="password">
+                </div>
+                <button class="btn btn-outline-info">
+                    <img src="https://img.icons8.com/?size=256&id=78DNxx5REZlb&format=png" height="50">
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>

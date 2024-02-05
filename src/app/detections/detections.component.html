@@ -1,0 +1,55 @@
+<section style="height: 90vh;">
+<div class="container mt-2 pt-5 pb-5">
+
+    <!--
+    <div *ngIf="errorMessage"> {{errorMessage | json}} </div>
+ -->
+    
+        
+<div class="card" *ngIf="detections" >
+        <div class="card-header">
+            <img src="https://cdn-icons-png.freepik.com/512/5300/5300140.png?ga=GA1.1.390968011.1706228316&" height="40">
+           Detected Vehicules </div>
+            <div class="card-body">
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                    
+                        <th>Track-ID</th>
+                        <th>Licence-Plate</th>
+                        <th>Confidence</th>
+                        <th>Camera Location</th>
+                        <th>Date of Detection</th>
+                        <th>Detected</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of detections ">
+                
+                        <td class="pt-3">{{d.track_id}} </td>
+                        <td class="pt-3">{{d.license_plate_text}} </td>
+                        <td class="pt-3">{{d.confidence}} </td>
+                        <td class="pt-3">{{d.camera_location}} </td>
+                        <td class="pt-3">{{d.date_detection}} </td>
+                        <td>
+                            <button class="btn btn-outline">
+                                <!--<img src="https://img.icons8.com/?size=256&id=Z1uq6OhA7KYK&format=png" height="25">-->
+                                <!--<i class="bi bi-trash"></i>-->
+                                <img src="https://cdn-icons-png.freepik.com/512/6747/6747740.png?ga=GA1.1.390968011.1706228316&" height="35">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+        </div>
+
+    </section>
+
+
+

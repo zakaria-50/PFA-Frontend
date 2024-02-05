@@ -28,7 +28,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/app/home/assets/animatecss/animate.css",
+              "src/app/home/assets/bootstrap/css/bootstrap-grid.min.css",
+              "src/app/home/assets/bootstrap/css/bootstrap-reboot.min.css"
+              
+              
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.js"

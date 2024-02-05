@@ -1,26 +1,81 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="https://th.bing.com/th/id/R.ec5d2015d6f82d4a3827aae7df5dde4d?rik=iFEsNx%2fsFdiEWg&pid=ImgRaw&r=0" height="30" /> Police Web App </a>
+      <a class="navbar-brand" routerLink="/admin/home" ><img src="https://th.bing.com/th/id/R.ec5d2015d6f82d4a3827aae7df5dde4d?rik=iFEsNx%2fsFdiEWg&pid=ImgRaw&r=0" height="40" /> Traffic Police WebApp </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-               <img src="https://img.icons8.com/?size=256&id=iJzm3AFQCS4W&format=png" height="30"/> Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/admin/home" >
+               <img src="https://cdn-icons-png.freepik.com/512/10473/10473299.png?ga=GA1.1.390968011.1706228316&" height="30"/> Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/detections">
+                <img src="https://cdn-icons-png.freepik.com/512/1224/1224171.png?ga=GA1.1.390968011.1706228316&" height="25"/> Detection List</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/fichiers">
+                <img src="https://img.icons8.com/?size=256&id=SPJrDfRcvJLu&format=png" height="30"/> Fiche</a>
+          </li>
+ <!--         <li class="nav-item">
             <a class="nav-link" routerLink="/fichiers">
-                <img src="https://img.icons8.com/?size=256&id=DVzc1vi8FDJt&format=png" height="30"/> Fichers</a>
+              <img src="https://img.icons8.com/?size=256&id=ObuWtTlsoTj6&format=png" height="25" />
+              Search Fichers</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/new-fichier">
+                <img src="https://img.icons8.com/?size=256&id=305PnCAy54Tu&format=png" height="30"/> New Ficher</a>
+          </li>
+-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://cdn-icons-png.freepik.com/512/3845/3845826.png?ga=GA1.1.390968011.1706228316&" height="30"/>
+              Fiche
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/admin/fichiers">
+                <img src="https://img.icons8.com/?size=256&id=ObuWtTlsoTj6&format=png" height="25" />
+              Search Record</a></li>
+              <li *ngIf="authService.roles.includes('ADMIN')"><a class="dropdown-item" routerLink="/admin/new-fichier">
+                <img src="https://img.icons8.com/?size=256&id=305PnCAy54Tu&format=png" height="30"/> New Record</a></li>
+            </ul>
+          </li>
+
           
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        
+       <!-- <ul class="navbar nav list-unstyled" *ngIf="authService.isAuthenticated==true">
+          <li class="nav-item">
+            <a class="nav-link active text-info">
+              <img src="https://img.icons8.com/?size=256&id=kp3yRtuUVOG5&format=png" height="25">
+              {{this.authService.username}}
+            </a>
+          </li>
+          <li>
+            <button (click)="handleLogout()" class="btn btn-outline-info">Logout</button>
+          </li>
+        </ul>-->
+        <ul class="navbar nav list-unstyled" *ngIf="authService.isAuthenticated == true">
+          <li class="nav-item">
+            <a class="nav-link active text-info">
+              <ng-container *ngIf="authService.roles === 'USER'; else adminImage">
+                <img src="https://img.icons8.com/?size=256&id=kp3yRtuUVOG5&format=png" height="25" alt="User Image">
+              </ng-container>
+              <ng-template #adminImage>
+                <img src="https://img.icons8.com/?size=256&id=B0BQPX3Ux4n5&format=png" height="25" alt="Admin Image">
+              </ng-template>
+              {{ this.authService.username }}
+            </a>
+          </li>
+          <li>
+            <button (click)="handleLogout()" class="btn btn-outline-info">Logout</button>
+          </li>
+        </ul>
+        
       </div>
     </div>
   </nav>
